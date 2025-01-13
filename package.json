@@ -12,6 +12,8 @@
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-rough-notation": "^1.0.5",
+    "rough-notation": "^0.5.1",
     "sass": "^1.83.1"
   },
   "devDependencies": {

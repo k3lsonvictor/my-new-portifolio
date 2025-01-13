@@ -8,6 +8,16 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lSpartan: ["var(--font-lSpartan)"],
+        jersey: ["var(--font-jersey-15)"],
+        crimsonText: ["var(--font-crimson-text)"],
+      },
+      fontWeight: {
+        sm: "100",
+        md: "700",
+        lg: "800",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

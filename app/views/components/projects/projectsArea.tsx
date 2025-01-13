@@ -1,10 +1,10 @@
 import { PlatformStructure } from '../../layouts/platformStructure';
-import { HomeSection } from './homeSection';
+import { ProjectsSection } from './projectsSection';
 
-export const HomeArea = () => {
+export const ProjectsArea = () => {
   return(
     <PlatformStructure>
-;      <HomeSection />
+;      <ProjectsSection />
     </PlatformStructure>
   );
 };
