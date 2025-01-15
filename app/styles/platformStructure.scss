@@ -67,11 +67,11 @@
 
 .children-container {
   width: 100%;
-  z-index: 9999;
+  z-index: 20;
 }
 
 .g1 {
-  z-index: 1;
+  z-index: 0;
   position: absolute;
   background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 40%) no-repeat;
   // mix-blend-mode: var(--blending);
@@ -89,7 +89,7 @@
 }
 
 .g2 {
-  z-index: 1;
+  z-index: 0;
   position: absolute;
   background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 40%) no-repeat;
   // mix-blend-mode: var(--blending);

@@ -22,6 +22,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        smoothBounce: 'smoothBounce 4s infinite', // Nome e duração
+      },
+      keyframes: {
+        smoothBounce: {
+          '0%, 100%': { transform: 'translateY(0)', easing: 'ease-out' },
+          '50%': { transform: 'translateY(-20px)', easing: 'ease-in' },
+        },
+      },
     },
   },
   plugins: [],

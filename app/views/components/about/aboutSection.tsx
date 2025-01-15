@@ -1,22 +1,37 @@
+"use client";
 import Image from "next/image";
 import PictureAutor from "@/public/assets/foto de perfil.jpg";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { SocialNetworkButton } from "./socialNetworkButton/socialNetworkButton";
 // import "@/app/styles/aboutStyle.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 export const AboutSection = () => {
   const [state] = useState({ show: true });
-
+  const [isAboutVisible, setIsAboutVisible] = useState(false);
+  useEffect(() => {
+    const aboutSection = document.getElementById('about-section');
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsAboutVisible(true);
+      } else {
+        setIsAboutVisible(false);
+      }
+    }, { root: null, rootMargin: '0px', threshold: 0.5 });
+    if (aboutSection) {
+      observer.observe(aboutSection);
+    }
+  })
   return (
-    <div className="w-full h-full flex flex-col justify-start pt-[100px] 2xl:pt-[200px] pb-[100px] px-[100px] 2xl:px-[300px] items-start font-lSpartan font-lg text-[#C2C2C2] overflow-y-scroll">
+    <div id="about-section" className="w-full h-full flex flex-col justify-start pt-[100px] 2xl:pt-[200px] pb-[100px] px-[100px] 2xl:px-[300px] items-start font-lSpartan font-lg text-[#C2C2C2]">
       <div className="mb-10 font-jersey font-sm text-[2rem]">E AÍ, SOU O KEL!</div>
       <div className="grid lg:grid-cols-[1fr_305px] gap-[200px] font-crimsonText font-sm text-[20px] leading-8">
         <div className="w-auto relative">
-          <RoughNotationGroup show={state.show}>
+          <RoughNotationGroup show={isAboutVisible}>
             <p>Eu sou um <RoughNotation type="underline" show={state.show}>engenheiro de software</RoughNotation> que ama construir softwares, mas que ama construir coisas de forma geral, e assim a minha jornada começou em outros mares.
-              Na verdade eu sou <RoughNotation type="underline" show={state.show} >um estudante de engenharia elétrica</RoughNotation>, que desde criança tinha apenas um sonho, se tornar o homem de ferro. O tempo passou e percebi que construir uma armadura que vou e solta lazers não era tão fácil quanto eu pensava, mas na minha jornada descobri que existem coisas tão legais quanto uma armadura que solta lazers,
-              coisas que eu podia construir através da programação, que <RoughNotation type="underline" show={state.show}>ajudam as pessoas</RoughNotation> no seu dia a dia, nos seus problemas do trabalho, ou até fora dele de forma a alegrar e descontrair depois de um dia difícil.</p>
-            Então sim, eu amo programar, mais amo ainda mais  <br /><RoughNotation type="underline" show={state.show}>poder fazer a diferença através da programação</RoughNotation>.
+              Na verdade eu sou <RoughNotation type="underline" show={isAboutVisible} >um estudante de engenharia elétrica</RoughNotation>, que desde criança tinha apenas um sonho, se tornar o homem de ferro. O tempo passou e percebi que construir uma armadura que vou e solta lazers não era tão fácil quanto eu pensava, mas na minha jornada descobri que existem coisas tão legais quanto uma armadura que solta lazers,
+              coisas que eu podia construir através da programação, que <RoughNotation type="underline" show={isAboutVisible}>ajudam as pessoas</RoughNotation> no seu dia a dia, nos seus problemas do trabalho, ou até fora dele de forma a alegrar e descontrair depois de um dia difícil.</p>
+            Então sim, eu amo programar, mais amo ainda mais  <br /><RoughNotation type="underline" show={isAboutVisible}>poder fazer a diferença através da programação</RoughNotation>.
           </RoughNotationGroup>
         </div>
         <div className="w-full h-full hidden lg:flex flex-col items-center">

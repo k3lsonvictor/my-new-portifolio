@@ -23,8 +23,8 @@ export const PlatformStructure = ({ children }: { children: ReactNode }) => {
     let tgY = curY;
 
     function move() {
-      curX += (tgX - curX) / 20;
-      curY += (tgY - curY) / 20;
+      curX += (tgX - curX) / 5;
+      curY += (tgY - curY) / 5;
       if (interBubble) {
         interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
       }
@@ -45,14 +45,13 @@ export const PlatformStructure = ({ children }: { children: ReactNode }) => {
   }, [mounted]);
 
   if (!mounted) {
-    // Evite renderizar até que o componente esteja no cliente
     return null;
   }
 
   return (
     <div className="platform-container flex flex-col h-screen w-full overflow-hidden">
       <Header />
-      <div className="children-container w-full h-full">{children}</div>
+      <div className="children-container w-full h-full overflow-y-scroll">{children}</div>
       <div className="gradients-container">
         <div className="g1"></div>
         <div className="g2"></div>
