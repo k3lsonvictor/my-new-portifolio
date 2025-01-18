@@ -28,15 +28,20 @@ export const AboutSection = () => {
       <div className="mb-10 font-jersey font-sm text-[2rem]">E AÍ, SOU O KEL!</div>
       <div className="grid lg:grid-cols-[1fr_305px] max-[1200px]:flex max-[1200px]:flex-col max-[1200px]:gap-[50px] gap-[200px] font-crimsonText font-sm text-[20px] leading-8">
         <div className="w-auto h-auto flex flex-col gap-10">
-          <div className="w-auto relative max-[600px]:text-justify">
+          <div className="w-auto relative text-justify">
             <RoughNotationGroup show={isAboutVisible}>
-              <p>Eu sou um <RoughNotation type="underline" show={state.show}>engenheiro de software</RoughNotation> que ama construir softwares, mas que ama construir coisas de forma geral, e assim a minha jornada começou em outros mares.
-                Na verdade eu sou <RoughNotation type="underline" show={isAboutVisible} >um estudante de engenharia elétrica</RoughNotation>, que desde criança tinha apenas um sonho, se tornar o homem de ferro. O tempo passou e percebi que construir uma armadura que vou e solta lazers não era tão fácil quanto eu pensava, mas na minha jornada descobri que existem coisas tão legais quanto uma armadura que solta lazers,
-                coisas que eu podia construir através da programação, que <RoughNotation type="underline" show={isAboutVisible}>ajudam as pessoas</RoughNotation> no seu dia a dia, nos seus problemas do trabalho, ou até fora dele de forma a alegrar e descontrair depois de um dia difícil.</p>
-              Então sim, eu amo programar, mais amo ainda mais  <br /><RoughNotation type="underline" show={isAboutVisible}>poder fazer a diferença através da programação</RoughNotation>.
+              <p>Eu sou um <RoughNotation type="underline" show={state.show}>engenheiro de software</RoughNotation> apaixonado por construir, não apenas softwares, mas qualquer tipo de projeto. Minha jornada, no entanto, começou em outros mares.
+              </p>
+              <p>
+                <RoughNotation type="underline" show={isAboutVisible} >Estudante de engenharia elétrica</RoughNotation>, desde criança eu tinha um grande sonho: me tornar o Homem de Ferro. Com o tempo, percebi que criar uma armadura que voa e dispara lasers não era tão simples quanto parecia.
+                No entanto, nessa jornada, descobri algo tão empolgante quanto: a programação.Com ela, posso criar soluções que facilitam o dia a dia das pessoas, resolvem problemas no trabalho ou até trazem alegria e leveza após um dia difícil.
+              </p>
+              <p>
+                Então sim, eu amo programar, mais amo ainda mais  <br /><RoughNotation type="underline" show={isAboutVisible}>poder fazer a diferença através da programação</RoughNotation>.
+              </p>
             </RoughNotationGroup>
           </div>
-            <button className="font-jersey border w-max h-auto px-4 py-2 flex justify-center items-center bg-white bg-opacity-80 text-black gap-4" onClick={() => window.open('/assets/Curriculo.pdf', '_blank')}>
+          <button className="font-jersey border w-max h-auto px-4 py-2 flex justify-center items-center bg-white bg-opacity-80 text-black gap-4" onClick={() => window.open('/assets/Curriculo.pdf', '_blank')}>
             Currículo (PDF)
             <Image
               src={Arrow}
@@ -45,7 +50,7 @@ export const AboutSection = () => {
               height={30}
               className="color-"
             />
-            </button>
+          </button>
         </div>
         <div className="w-full h-full flex flex-col items-center">
           <div className="w-full h-full overflow-hidden flex hover:scale-105 transition-transform duration-300 max-[1200px]:w-[316px]">
