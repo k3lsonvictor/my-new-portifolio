@@ -4,6 +4,7 @@ import { HomeSection } from './views/components/home/homeSection';
 import { PlatformStructure } from './views/layouts/platformStructure';
 import { SkillsSection } from './views/components/skills/skillsSection';
 import { ProjectsSection } from './views/components/projects/projectsSection';
+import { ContactSection } from './views/components/contact/contactSection';
 
 
 export default async function Home() {
@@ -14,6 +15,7 @@ export default async function Home() {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection/>
+        <ContactSection/>
       </PlatformStructure>
     </div>
   );
