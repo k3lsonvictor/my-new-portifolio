@@ -34,7 +34,7 @@ export const Header = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: window.innerWidth > 1000 ? 0.7 : 0.3,
+        threshold: window.innerWidth > 1000 ? 0.5 : 0.3,
       }
     );
 
