@@ -29,11 +29,11 @@ export const HomeSection = () => {
       }`}
     >
       <div>Hello</div>
-      <div className={`text-[5rem] font-crimsonText font-sm`}>
+      <div className={`max-[680px]:text-[12vw] text-[5rem] font-crimsonText font-sm`}>
         <p className="">I &apos;m Kelson</p>
       </div>
       <div className={`font-jersey font-md`}>
-        <p className="text-[2rem]">Web Developer</p>
+        <p className="max-[680px]:text-[6vw] text-[2rem]">A web developer</p>
       </div>
       <button onClick={scrollToAbout}>
         <Image

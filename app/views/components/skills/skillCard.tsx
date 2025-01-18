@@ -8,7 +8,7 @@ interface TecnologyInfoProps {
 
 export const SkillCard = ({src, tecnologyInfo, color}:{src: string, tecnologyInfo: TecnologyInfoProps, color: string}) => {
   return (
-    <div className="skill-card w-max min-w-[30%] h-[100px] flex bg-[#202123] border border-[#A8A8A8] items-center px-6 gap-6" style={{ "--g-card-color": color } as React.CSSProperties}>
+    <div className="skill-card w-full max-[660px]:min-w-full min-w-[30%] h-[100px] flex bg-[#202123] border border-[#A8A8A8] items-center px-6 gap-6" style={{ "--g-card-color": color } as React.CSSProperties}>
       <div>
         <Image
           src={src}

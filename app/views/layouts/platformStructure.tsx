@@ -51,7 +51,7 @@ export const PlatformStructure = ({ children }: { children: ReactNode }) => {
   return (
     <div className="platform-container flex flex-col h-screen w-full overflow-hidden">
       <Header />
-      <div className="children-container w-full h-full overflow-y-scroll">{children}</div>
+      <div className="children-container w-full h-auto overflow-y-scroll px-[100px] 2xl:px-[300px] max-[680px]:px-[50px]">{children}</div>
       <div className="gradients-container">
         <div className="g1"></div>
         <div className="g2"></div>
