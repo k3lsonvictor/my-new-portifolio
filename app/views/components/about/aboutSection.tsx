@@ -48,7 +48,6 @@ export const AboutSection = () => {
               alt="Arrow"
               width={20}
               height={30}
-              className="color-"
             />
           </button>
         </div>

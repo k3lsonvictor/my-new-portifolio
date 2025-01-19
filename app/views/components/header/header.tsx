@@ -18,7 +18,7 @@ export const Header = () => {
   };
 
   useEffect(() => {
-    const sections = ["home", "about-section", "skills-section", "projects-section"];
+    const sections = ["home", "about-section", "skills-section", "projects-section", "contact-section"];
     const sectionElements = sections
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -130,12 +130,16 @@ export const Header = () => {
           color="#C2C2C2"
           show={visibleSections["contact-section"] && window.innerWidth > 1000}
         >
-          <button className="max-[1000px]:hidden" onClick={() => { }}>CONTACT</button>
+          <button
+            className="max-[1000px]:hidden"
+            onClick={() => {
+              scrollToSection("contact-section");
+            }}>CONTACT</button>
           <button
             className={`hidden bg-white w-[20px] h-[10px] max-[1000px]:flex transition-all duration-300 ease-in-out transform ${visibleSections[""] ? "w-[40px] opacity-100" : "opacity-50 hover:w-[40px] hover:opacity-100"
               }`}
             onClick={() => {
-              scrollToSection("about-section");
+              scrollToSection("contact-section");
             }}
           >
           </button>

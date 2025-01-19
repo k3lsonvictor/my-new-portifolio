@@ -4,7 +4,7 @@ import { ContactCard } from './contactCard';
 
 export const ContactSection = () => {
   return (
-    <div id="skills-section" className="sw-full h-auto flex flex-col justify-start pt-[100px] 2xl:pt-[200px] pb-[100px] items-start font-jersey font-lg text-[#C2C2C2]">
+    <div id="contact-section" className="sw-full h-auto flex flex-col justify-start pt-[100px] 2xl:pt-[200px] pb-[100px] items-start font-jersey font-lg text-[#C2C2C2]">
       <div className="mb-10 font-sm text-[2rem]">CONTACT</div>
       <div className="w-full flex flex-col justify-start gap-10 max-[860px]:grid max-[860px]:grid-cols-2 max-[700px]:grid-cols-1"> {/* Alterei de justify-between para justify-start */}
         <ContactCard contact="github.com/k3lsonvictor" link="https://github.com/k3lsonvictor">
