@@ -2,12 +2,13 @@ import Image, { StaticImageData } from "next/image";
 import Arrow from "@/public/assets/Arrow.svg";
 import "@/app/styles/skillCard.scss"
 
-interface TecnologyInfoProps {
+interface ProjectInfoProps {
   name: string;
   description: string;
+  tecnologies: string[];
 }
 
-export const ProjectCard = ({ src, tecnologyInfo, link }: { src: StaticImageData, tecnologyInfo: TecnologyInfoProps, link: string }) => {
+export const ProjectCard = ({ src, ProjectInfo, link }: { src: StaticImageData, ProjectInfo: ProjectInfoProps, link: string }) => {
   return (
     <div className="skill-card w-[30%] min-w-[250px] max-[960px]:min-w-full h-[400px] flex flex-col bg-[#202123] border border-[#A8A8A8] items-center gap-6">
       <div className="w-full h-[50%] border border-transparent overflow-hidden">
@@ -31,10 +32,19 @@ export const ProjectCard = ({ src, tecnologyInfo, link }: { src: StaticImageData
       </div>
       <div className="px-6 flex flex-col gap-4">
         <div>
-          {tecnologyInfo.name}
+          <div className="text-[14px] flex gap-2">
+            {ProjectInfo.tecnologies?.map((tec, index) => (
+                <div className="bg-white bg-opacity-10 px-2 py-1 rounded-full" key={index}>
+                  {tec}
+                </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          {ProjectInfo.name}
         </div>
         <div className="text-[14px]">
-          {tecnologyInfo.description}
+          {ProjectInfo.description}
         </div>
       </div>
     </div>

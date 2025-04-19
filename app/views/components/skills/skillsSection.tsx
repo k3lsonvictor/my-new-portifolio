@@ -6,6 +6,9 @@ import Tailwind from "@/public/assets/logos/image-2.svg"
 import Node from "@/public/assets/logos/image-3.svg"
 import Next from "@/public/assets/logos/Group 3.svg"
 import Nest from "@/public/assets/logos/Group 3-1.svg"
+import Angular from "@/public/assets/logos/angular.svg"
+import Postgres from "@/public/assets/logos/postgres.svg"
+import Docker from "@/public/assets/logos/docker.svg"
 import { SkillCard } from './skillCard';
 
 export const SkillsSection = () => {
@@ -19,7 +22,10 @@ export const SkillsSection = () => {
         <SkillCard src={Tailwind} tecnologyInfo={{ name: "Tailwind", time: "3 anos" }} color="6, 182, 212" />
         <SkillCard src={Node} tecnologyInfo={{ name: "Node", time: "3 anos" }} color="83, 158, 67" />
         <SkillCard src={Next} tecnologyInfo={{ name: "Next", time: "3 anos" }} color="0, 0, 0" />
-        <SkillCard src={Nest} tecnologyInfo={{ name: "Nest", time: "3 anos" }} color="223, 35, 77" />
+        <SkillCard src={Nest} tecnologyInfo={{ name: "Nest", time: "1 anos" }} color="223, 35, 77" />
+        <SkillCard src={Angular} tecnologyInfo={{ name: "Angular", time: "1 ano" }} color="223, 35, 77" />
+        <SkillCard src={Postgres} tecnologyInfo={{ name: "Postgres", time: "2 anos" }} color="0, 122, 204" />
+        <SkillCard src={Docker} tecnologyInfo={{ name: "Docker", time: "2 anos" }} color="0, 122, 204" />
       </div>
     </div>
   );
