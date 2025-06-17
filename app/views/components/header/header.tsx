@@ -7,6 +7,14 @@ export const Header = () => {
     "about-section": false,
     "skills-section": false,
   });
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // console.log(visibleSections["home"] === true)
 
@@ -34,7 +42,7 @@ export const Header = () => {
       {
         root: null,
         rootMargin: "0px",
-        threshold: window.innerWidth > 1000 ? 0.5 : 0.3,
+        threshold: (windowWidth !== null && windowWidth > 1000) ? 0.5 : 0.3,
       }
     );
 
@@ -43,11 +51,11 @@ export const Header = () => {
     return () => {
       observer.disconnect();
     };
-  }, [visibleSections]); // Dependência no estado para atualização correta
+  }, [windowWidth]); // Dependência no estado para atualização correta
 
   return (
     <div className="absolute top-0 max-[1000px]:top-10 max-[1000px]:flex-col max-[1000px]:gap-4 w-[calc(100%-15px)] h-auto flex justify-between bg-transparente font-jersey text-[#C2C2C2] text-[16px] px-[100px] 2xl:px-[300px] pt-[30px] z-[210] backdrop-blur-md pb-10 max-[1000px]:text-[2vw] max-[1000px]:w-min max-[1000px]:p-0">
-      <RoughNotation type="underline" color="#C2C2C2" show={visibleSections["home"] && window.innerWidth > 1000}>
+      <RoughNotation type="underline" color="#C2C2C2" show={visibleSections["home"] && (windowWidth !== null && windowWidth > 1000)}>
         <button className="cursor-pointer max-[1000px]:hidden" onClick={() => { scrollToSection("home"); }}>
           KELSON VICTOR
         </button>
@@ -63,7 +71,7 @@ export const Header = () => {
         <RoughNotation
           type="circle"
           color="#C2C2C2"
-          show={visibleSections["about-section"] && window.innerWidth > 1000}
+          show={visibleSections["about-section"] && (windowWidth !== null && windowWidth > 1000)}
         >
           <button
             className="max-[1000px]:hidden"
@@ -85,7 +93,7 @@ export const Header = () => {
         <RoughNotation
           type="circle"
           color="#C2C2C2"
-          show={visibleSections["skills-section"] && window.innerWidth > 1000}
+          show={visibleSections["skills-section"] && (windowWidth !== null && windowWidth > 1000)}
         >
           <button
             className="max-[1000px]:hidden"
@@ -107,7 +115,7 @@ export const Header = () => {
         <RoughNotation
           type="circle"
           color="#C2C2C2"
-          show={visibleSections["projects-section"] && window.innerWidth > 1000}
+          show={visibleSections["projects-section"] && (windowWidth !== null && windowWidth > 1000)}
         >
           <button
             className="max-[1000px]:hidden"
@@ -128,7 +136,7 @@ export const Header = () => {
         <RoughNotation
           type="circle"
           color="#C2C2C2"
-          show={visibleSections["contact-section"] && window.innerWidth > 1000}
+          show={visibleSections["contact-section"] && (windowWidth !== null && windowWidth > 1000)}
         >
           <button
             className="max-[1000px]:hidden"

@@ -1,3 +1,4 @@
+"use cliente"
 import { PlatformStructure } from '../../layouts/platformStructure';
 import { HomeSection } from './homeSection';
 
