@@ -24,7 +24,7 @@ export const ProjectsSection = () => {
 
   const getProjects = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/projects");
+      const response = await axios.get("https://projects-api-w9p1.onrender.com/");
       if (!response) {
         return
       }
